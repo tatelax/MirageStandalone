@@ -71,7 +71,16 @@ namespace Mirage.Weaver
             foreach (var reference in module.AssemblyReferences)
             {
                 var assembly = module.AssemblyResolver.Resolve(reference);
+
+                if (assembly is null)
+                    continue;
+                Console.WriteLine($"Rresolved assembly: {assembly}");
                 references.Add(assembly);
+            }
+
+            for(int i = 0; i < references.Count; i++)
+            {
+                Console.WriteLine($"AssemblyReferences {references[i]}");
             }
 
             // check current module first, then check other modules
@@ -88,9 +97,12 @@ namespace Mirage.Weaver
             FindExtensionMethods(mirageModule);
             tracker.LogCount("Mirage");
 
+            Console.WriteLine("! " + references);
+
             // process all references
             foreach (var assembly in references)
             {
+                Console.WriteLine("~ " + assembly.Name.Name);
                 tracker.LogCount(assembly.Name.Name);
                 FindExtensionMethods(assembly);
             }

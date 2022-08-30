@@ -2,7 +2,7 @@
   "profiles": {
     "Weaver": {
       "commandName": "Project",
-      "commandLineArgs": "\"G:\\repos_fast\\MirageStandalone\\MirageHostExample\\bin\\Debug\\net5.0\\MirageHostExample.dll\""
+      "commandLineArgs": "/Users/tatemccormick/Documents/Projects/MirageStandalone/Example/bin/Debug/net6.0//Example.dll"
     }
   }
 }
