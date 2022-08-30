@@ -5,6 +5,7 @@ namespace UnityEngine
 {
     public class Component : Object
     {
+        public bool enabled;
         public GameObject gameObject => throw new NotSupportedException();
 
         public Transform transform => gameObject.transform;

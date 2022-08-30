@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using JamesFrowen.Mirage.Sockets.SimpleWeb;
 using Mirage.Logging;
 using Mirage.Sockets.Udp;
 using UnityEngine;
@@ -33,7 +34,8 @@ namespace Mirage.Standalone
 
         public NetworkServer AddServer(ushort port = 7777)
         {
-            var socketFactory = new UdpSocketFactory { Port = port };
+            //var socketFactory = new UdpSocketFactory { Port = port };
+            var socketFactory = new WebSocketFactory { port = port };
             var server = new NetworkServer { SocketFactory = socketFactory };
 
             server.Started.AddListener(() =>
@@ -51,7 +53,8 @@ namespace Mirage.Standalone
 
         public NetworkClient AddClient()
         {
-            var socketFactory = new UdpSocketFactory();
+            //var socketFactory = new UdpSocketFactory();
+            var socketFactory = new WebSocketFactory();
             var client = new NetworkClient { SocketFactory = socketFactory };
 
             client.Started.AddListener(() =>

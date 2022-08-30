@@ -9,4 +9,12 @@
     <ProjectReference Include="..\UnityEngine\FakeUnityEngine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Sockets\Websockets\" />
+    <None Remove="Sockets\Websockets\SimpleWebTransport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sockets\Websockets\" />
+    <Folder Include="Sockets\Websockets\SimpleWebTransport\" />
+  </ItemGroup>
 </Project>

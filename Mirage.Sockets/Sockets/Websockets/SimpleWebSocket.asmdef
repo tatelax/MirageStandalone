@@ -1,0 +1,17 @@
+{
+    "name": "SimpleWebSocket",
+    "references": [
+        "SimpleWebTransport",
+        "Mirage",
+        "Mirage.SocketLayer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
